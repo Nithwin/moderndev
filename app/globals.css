@@ -4,3 +4,17 @@
     --font-inter: "Inter";
     --font-poppins: "Poppins";
 }
+*{
+    scrollbar-width: none;
+}
+.loader-spin{
+    animation: spin 5s linear infinite ;
+}
+@keyframes spin{
+    0%{
+        rotate: 0deg;
+    }
+    100%{
+        rotate: 360deg;
+    }
+}
