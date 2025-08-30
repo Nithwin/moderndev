@@ -6,8 +6,8 @@ import { useState } from "react";
 const Header = () => {
   const [open, setOpen] = useState(false);
   return (
-    <header className="bg-black/20 backdrop-blur-3xl w-full fixed top-0 left-0 right-0">
-      <nav className="flex justify-between py-2 items-center">
+    <header className="bg-black/10 backdrop-blur-3xl w-full fixed z-10">
+      <div className="flex justify-between py-2 items-center">
         <div className="w-full flex items-center justify-between ps-2 pe-[2rem]">
           <div className="flex items-center">
             <Image
@@ -42,8 +42,8 @@ const Header = () => {
           </div>
           <div className="hidden lg:block">
             <ul>
-              <li>
-                <span className="text-white font-inter text-2xl">Join Us</span>
+              <li  className="delay-150 ease-linear transition-all  hover:scale-110">
+                <span className="cursor-pointer text-white font-inter text-xl bg-gradient-to-r from-[#EB0000] to-[#FF00B2] px-[1.5rem] py-2 rounded-full font-semibold">Join Us</span>
               </li>
             </ul>
           </div>
@@ -51,8 +51,8 @@ const Header = () => {
 
         <div
           className={`${
-            open ? "translate-y-0" : "translate-y-180"
-          } transition-all delay-150 ease-linear fixed inset-0 z-50 top-[4.4rem] backdrop-blur-3xl bg-red-600/10 flex lg:hidden justify-center`}
+            open ? "translate-y-10" : "translate-y-180 hidden"
+          } transition-all delay-150 ease-linear left-0 right-0 absolute z-50 top-[2rem] backdrop-blur-3xl bg-red-600/20 flex lg:hidden justify-center h-[82vh]`}
         >
           <ul className="flex flex-col items-center justify-evenly text-2xl text-red-100 font-inter">
             <li className="">
@@ -84,7 +84,7 @@ const Header = () => {
             />
           )}
         </div>
-      </nav>
+      </div>
     </header>
   );
 };
