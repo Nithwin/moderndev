@@ -1,6 +1,8 @@
 import Achievement from "@/components/Achievement"
 import Header from "@/components/Header"
 import Hero from "@/components/Hero"
+import Projects from "@/components/Projects"
+import Vision from "@/components/Vision"
 
 
 const Home = () => {
@@ -9,6 +11,8 @@ const Home = () => {
     <Header />
     <Hero />
     <Achievement />
+    <Vision />
+    <Projects />
     </div>
   )
 }
