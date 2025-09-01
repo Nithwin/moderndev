@@ -1,5 +1,9 @@
 # Modern Dev
 
+[![Contributors](https://img.shields.io/github/contributors/Nithwin/moderndev?style=flat-square)](https://github.com/Nithwin/moderndev/graphs/contributors)
+
+**Contributors:** See the full list in [MEMBERS.md](./MEMBERS.md). To add yourself, follow the steps in [CONTRIBUTING.md](./CONTRIBUTING.md).
+
 > Modern Dev is a student-run lab where we design and build mobile and web applications together — a place to learn, collaborate, and ship projects.
 
 We are a group of college students working on real apps, helping each other grow, and keeping everything open-source so other students can learn and contribute.
@@ -8,7 +12,7 @@ We are a group of college students working on real apps, helping each other grow
 
 This is how the app looks
 
-[![Modern Dev demo](image.png)]
+![Modern Dev demo](image.png)
 
 ## What we build
 
@@ -112,7 +116,7 @@ git push -u origin feat/short-description
 If you'd like to be listed as a contributor, add one line to `MEMBERS.md` using this format and open a small PR:
 
 ```markdown
-- [Your Name](https://github.com/yourusername/your-repo) — Role (e.g. Frontend)
+- [Your Name](https://github.com/yourusername/)
 ```
 
 Or open an issue titled `Add member: Your Name` and paste the same line; a maintainer will add you.
