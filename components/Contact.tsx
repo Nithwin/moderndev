@@ -64,7 +64,7 @@ const Contact = () => {
               />
             </div>
             <div className="mt-auto">
-              <button className="bg-gradient-to-r from-[#EB0000] to-[#FF00B2] w-full font-semibold font-poppins text-white py-3 rounded-xl transition-transform duration-300 hover:scale-105">
+              <button className="cursor-pointer bg-gradient-to-r from-[#EB0000] to-[#FF00B2] w-full font-semibold font-poppins text-white py-3 rounded-xl transition-transform duration-300 hover:scale-105">
                 Send Message
               </button>
             </div>

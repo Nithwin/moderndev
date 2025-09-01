@@ -52,7 +52,7 @@ const Header = () => {
         <div
           className={`${
             open ? "translate-y-10" : "translate-y-180 hidden"
-          } transition-all delay-150 ease-linear left-0 right-0 absolute z-50 top-[2rem] backdrop-blur-3xl bg-red-600/20 flex lg:hidden justify-center h-[90dvh]`}
+          } transition-all delay-150 ease-linear left-0 right-0 absolute z-50 top-[2rem] backdrop-blur-3xl bg-red-950/80 flex lg:hidden justify-center h-[90dvh]`}
         >
           <ul className="flex flex-col items-center justify-evenly text-2xl text-red-100 font-inter">
             <li className="">
