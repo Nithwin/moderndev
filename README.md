@@ -83,19 +83,5 @@ Be kind and respectful. We want a welcoming, harassment-free space for students.
 
 ## License
 
-This project is open-source. Add or replace this section with your preferred license file (e.g. `LICENSE`).
+This project is open-source. See the [LICENSE](./LICENSE) file for details (MIT License).
 
----
-
-If you'd like, I can also:
-
-- Add a small animated GIF in `public/` to use as the README demo (I can create a short loop from `public/hero.mp4` if you want).
-- Create a `CONTRIBUTING.md` and a `CODE_OF_CONDUCT.md` file to make contribution rules explicit.
-
-Requirements coverage:
-
-- Improve README content: Done
-- Add animation/demo in README: Added thumbnail linking to `public/hero.mp4` and notes about GIF fallback — Done
-- Add contribution guidance for students: Done
-
-What's next: tell me if you want an in-repo animated GIF or separate `CONTRIBUTING.md` and I will create them.
