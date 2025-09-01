@@ -1,20 +1,14 @@
-![Modern Dev - Lab for Mobile & Web](image.png)
-
 # Modern Dev
 
 > Modern Dev is a student-run lab where we design and build mobile and web applications together — a place to learn, collaborate, and ship projects.
 
 We are a group of college students working on real apps, helping each other grow, and keeping everything open-source so other students can learn and contribute.
 
-## Demo (animated preview)
+## Demo (Screenshot preview)
 
-Click the preview below to open a short demo video. If your browser supports it, the file will play in-place on GitHub.
+This is how the app looks
 
-[![Modern Dev demo](image.png)](public/hero.mp4)
-
-Notes:
-- The thumbnail above links to `public/hero.mp4` (a short demo of our site).
-- For an in-repo animated preview you can add an animated GIF (e.g. `public/demo.gif`) and replace the thumbnail.
+[![Modern Dev demo](image.png)]
 
 ## What we build
 
@@ -28,6 +22,7 @@ Notes:
 - Student-first: mentors + learners collaborating
 - Open-source: contributions welcome from college students
 - Modern stack: Next.js, React, Tailwind/PostCSS (see `package.json` and `app/`)
+
 
 ## Quick start (developer)
 
@@ -45,30 +40,104 @@ npm run dev
 
 Open `http://localhost:3000` in your browser. Edit `app/page.tsx` or components in `components/` and watch the site update.
 
-## Code contract (short)
-
-- Inputs: PRs with focused changes and passing lint/tests
-- Outputs: review, CI, and merge into `master` or feature branches
-- Error modes: CI failures block merge; use small commits and descriptive PRs
-
 ## How to contribute (student-friendly)
 
-> We welcome contributions from students of all levels. If you're new to open source, follow the easy path below.
+This quick, step-by-step guide shows exactly what to run (PowerShell) from cloning to opening a PR. Follow the commands and replace placeholders (UPPERCASE words) with your values.
 
-1. Fork the repo and create a branch from `master` named `feat/<short-name>` or `fix/<short-name>`.
-2. Open an issue describing what you want to change (optional but helpful).
-3. Make a small, focused change. Add tests or notes when relevant.
-4. Push your branch and open a Pull Request describing the change and how to test it.
+1) Fork the repo on GitHub
 
-Good PR checklist:
+- Open the repository page on GitHub and click "Fork" (top-right). This creates `github.com/YOUR_USERNAME/moderndev`.
 
-- [ ] Descriptive title and summary
-- [ ] References an issue (if available)
-- [ ] Includes screenshots or short demo (GIF/MP4) for UI changes
-- [ ] No sensitive data committed
-- [ ] Follows existing code style (look at `components/` for examples)
+2) Clone your fork locally
 
-Label guidance: add `good first issue` to tasks aimed at beginners. Maintainers will try to leave helpful review comments.
+```powershell
+# replace YOUR_USERNAME
+git clone https://github.com/YOUR_USERNAME/moderndev.git
+cd moderndev
+```
+
+3) Add the upstream remote (original repo)
+
+```powershell
+git remote add upstream https://github.com/Nithwin/moderndev.git
+git fetch upstream
+```
+
+4) Create a feature branch
+
+```powershell
+# choose a short name for your change
+git checkout -b feat/short-description
+```
+
+5) Install dependencies and run the site
+
+```powershell
+npm install
+npm run dev
+```
+
+Open http://localhost:3000 to test your changes.
+
+6) Make your change
+
+- Edit files in `app/` or `components/`.
+- Keep changes focused to one idea per branch.
+
+7) Stage and commit
+
+```powershell
+git add .
+git commit -m "feat: short summary of change"
+```
+
+8) Push your branch to your fork
+
+```powershell
+git push -u origin feat/short-description
+```
+
+9) Open a Pull Request on GitHub
+
+- Go to your fork on GitHub. You should see a prompt to "Compare & pull request". Click it.
+- Make sure the base repo is `Nithwin/moderndev` and the base branch is `master`.
+- In the PR body include:
+  - Short summary
+  - How to test
+  - Any screenshots or a short GIF for UI changes
+  - The PR checklist from `CONTRIBUTING.md`
+
+10) Add yourself to `MEMBERS.md` (optional)
+
+If you'd like to be listed as a contributor, add one line to `MEMBERS.md` using this format and open a small PR:
+
+```markdown
+- [Your Name](https://github.com/yourusername/your-repo) — Role (e.g. Frontend)
+```
+
+Or open an issue titled `Add member: Your Name` and paste the same line; a maintainer will add you.
+
+11) Keep your fork up to date (optional but recommended)
+
+```powershell
+# fetch latest changes from upstream master
+git fetch upstream
+git checkout master
+git merge upstream/master
+# push updated master to your fork
+git push origin master
+```
+
+12) Notes and etiquette
+
+- Make small, focused PRs — they get reviewed faster.
+- Add screenshots or a short demo for UI work.
+- Do not commit secrets or large files.
+- If you're unsure what to work on, open an issue and ask for guidance (label it `help wanted`).
+
+---
+
+Next: I can add a pre-filled `PULL_REQUEST_TEMPLATE.md` and `ISSUE_TEMPLATE.md` to make PRs and issues even easier — say the word and I will add them.
 
 ## Project structure (quick)
 
