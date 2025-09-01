@@ -1,37 +1,101 @@
-![alt text](image.png)
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+![Modern Dev - Lab for Mobile & Web](image.png)
 
-## Getting Started
+# Modern Dev
 
-First, run the development server:
+> Modern Dev is a student-run lab where we design and build mobile and web applications together — a place to learn, collaborate, and ship projects.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+We are a group of college students working on real apps, helping each other grow, and keeping everything open-source so other students can learn and contribute.
+
+## Demo (animated preview)
+
+Click the preview below to open a short demo video. If your browser supports it, the file will play in-place on GitHub.
+
+[![Modern Dev demo](image.png)](public/hero.mp4)
+
+Notes:
+- The thumbnail above links to `public/hero.mp4` (a short demo of our site).
+- For an in-repo animated preview you can add an animated GIF (e.g. `public/demo.gif`) and replace the thumbnail.
+
+## What we build
+
+- Cross-platform mobile apps
+- Progressive web apps and responsive websites
+- Small tools, utilities, and prototypes used in coursework
+- UI components, shared libraries, and design systems
+
+## Highlights
+
+- Student-first: mentors + learners collaborating
+- Open-source: contributions welcome from college students
+- Modern stack: Next.js, React, Tailwind/PostCSS (see `package.json` and `app/`)
+
+## Quick start (developer)
+
+1. Install dependencies
+
+```powershell
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Run the development server
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```powershell
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open `http://localhost:3000` in your browser. Edit `app/page.tsx` or components in `components/` and watch the site update.
 
-## Learn More
+## Code contract (short)
 
-To learn more about Next.js, take a look at the following resources:
+- Inputs: PRs with focused changes and passing lint/tests
+- Outputs: review, CI, and merge into `master` or feature branches
+- Error modes: CI failures block merge; use small commits and descriptive PRs
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## How to contribute (student-friendly)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+> We welcome contributions from students of all levels. If you're new to open source, follow the easy path below.
 
-## Deploy on Vercel
+1. Fork the repo and create a branch from `master` named `feat/<short-name>` or `fix/<short-name>`.
+2. Open an issue describing what you want to change (optional but helpful).
+3. Make a small, focused change. Add tests or notes when relevant.
+4. Push your branch and open a Pull Request describing the change and how to test it.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Good PR checklist:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [ ] Descriptive title and summary
+- [ ] References an issue (if available)
+- [ ] Includes screenshots or short demo (GIF/MP4) for UI changes
+- [ ] No sensitive data committed
+- [ ] Follows existing code style (look at `components/` for examples)
+
+Label guidance: add `good first issue` to tasks aimed at beginners. Maintainers will try to leave helpful review comments.
+
+## Project structure (quick)
+
+- `app/` — Next.js app routes and pages
+- `components/` — UI components used across pages
+- `public/` — static assets (images, video, fonts)
+- `README.md` — this file
+
+## Code of conduct
+
+Be kind and respectful. We want a welcoming, harassment-free space for students. If you need help, open an issue or reach out to project maintainers.
+
+## License
+
+This project is open-source. Add or replace this section with your preferred license file (e.g. `LICENSE`).
+
+---
+
+If you'd like, I can also:
+
+- Add a small animated GIF in `public/` to use as the README demo (I can create a short loop from `public/hero.mp4` if you want).
+- Create a `CONTRIBUTING.md` and a `CODE_OF_CONDUCT.md` file to make contribution rules explicit.
+
+Requirements coverage:
+
+- Improve README content: Done
+- Add animation/demo in README: Added thumbnail linking to `public/hero.mp4` and notes about GIF fallback — Done
+- Add contribution guidance for students: Done
+
+What's next: tell me if you want an in-repo animated GIF or separate `CONTRIBUTING.md` and I will create them.
