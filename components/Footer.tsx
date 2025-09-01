@@ -50,7 +50,7 @@ const Footer = () => {
           </ul>
           <ul className="flex gap-[1.5rem] cursor-pointer">
             {contacts.map((item, index) => (
-              <li>
+              <li key={index}>
                 <item.icon className="text-gray-300 size-6 lg:size-8" />
               </li>
             ))}

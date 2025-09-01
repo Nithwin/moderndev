@@ -30,7 +30,9 @@ const Header = () => {
                 <span>Projects</span>
               </li>
               <li className="">
-                <span>Members</span>
+                <a href="/members">
+                  <span>Members</span>
+                </a>
               </li>
               <li>
                 <span>Skills</span>
@@ -42,8 +44,10 @@ const Header = () => {
           </div>
           <div className="hidden lg:block">
             <ul>
-              <li  className="delay-150 ease-linear transition-all  hover:scale-110">
-                <span className="cursor-pointer text-white font-inter text-xl bg-gradient-to-r from-[#EB0000] to-[#FF00B2] px-[1.5rem] py-2 rounded-full font-semibold">Join Us</span>
+              <li className="delay-150 ease-linear transition-all  hover:scale-110">
+                <span className="cursor-pointer text-white font-inter text-xl bg-gradient-to-r from-[#EB0000] to-[#FF00B2] px-[1.5rem] py-2 rounded-full font-semibold">
+                  Join Us
+                </span>
               </li>
             </ul>
           </div>
@@ -62,7 +66,9 @@ const Header = () => {
               <span>Projects</span>
             </li>
             <li className="">
-              <span>Members</span>
+              <a href="/members">
+                <span>Members</span>
+              </a>
             </li>
             <li>
               <span>Skills</span>
