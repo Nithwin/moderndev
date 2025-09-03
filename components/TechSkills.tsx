@@ -73,7 +73,7 @@ const TechSkills = () => {
   ];
 
   return (
-    <section className="pt-16 relative overflow-hidden min-h-screen z-0">
+    <section id='skills' className="pt-16 relative overflow-hidden min-h-screen z-0">
       <div className="flex flex-col relative z-10 gap-[3rem]">
         {/* Header Section */}
         <div className="flex flex-col gap-2 justify-center relative mx-auto">

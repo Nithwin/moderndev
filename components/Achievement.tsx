@@ -5,7 +5,7 @@ import { Loader } from "lucide-react";
 const Achievement = () => {
   return (
     <section className="pt-[4rem] h-full px-[1.5rem] lg:p-[4rem] flex relative">
-      <div className="flex border-2 border-red-600/50 px-[2rem] lg:px-[4rem] py-[1.5rem] lg:pt-[3rem] rounded-2xl h-full bg-red-950/10 backdrop-blur-3xl">
+      <div id="achievement"  className="flex border-2 border-red-600/50 px-[2rem] lg:px-[4rem] py-[1.5rem] lg:pt-[3rem] rounded-2xl h-full bg-red-950/10 backdrop-blur-3xl">
         <div className="flex flex-col gap-[2rem] relative">
           <div className="border-1 rounded-full border-red-700 px-3 py-2 w-fit mx-auto flex gap-2 items-center bg-red-600/15 backdrop-blur-3xl">
             <Image

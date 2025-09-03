@@ -1,9 +1,10 @@
+"use client";
 import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative pt-[15vh]">
-      <div className="flex flex-col">
+    <section  className="relative pt-[15vh]">
+      <div id="hero" className="flex flex-col">
         <div className="absolute -z-10 top-0 opacity-30 h-dvh lg:w-full">
           <video
             autoPlay

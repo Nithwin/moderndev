@@ -3,7 +3,7 @@ import UnderLine from "./SVG/UnderLine";
 
 const Contact = () => {
   return (
-    <section className="px-4 pb-20">
+    <section id="contact" className="px-4 pb-20">
       <div className="max-w-6xl mx-auto flex flex-col gap-12 lg:gap-16">
         <div className="flex flex-col gap-2 justify-center relative mx-auto">
           <div className="size-[10rem] rounded-full bg-[#EB0000]/30 blur-3xl lg:blur-6xl absolute top-0 left-[30%] lg:left-[45%] right-[30%] mix-blend-plus-lighter"></div>

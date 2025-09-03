@@ -1,146 +1,100 @@
-import React from "react";
+// components/Members.tsx
+
+"use client";
+import React, { useEffect, useState } from "react";
 import UnderLine from "./SVG/UnderLine";
 import Image from "next/image";
+import MemberCard from "./MemberCard"; // Import the new component
+
+// Recommended: Define a type/interface for your data
+interface Member {
+  id: number;
+  name: string;
+  email?: string;
+  role: string;
+  img: string;
+  specialization: string; // Add specialization to match your code
+  description?: string; // This is the new field for the hover effect
+}
 
 const Members = () => {
-  let studentMembers = [
-    {
-      img: "/contact.png",
-      name: "Nithwin V M",
-      role: "Full Stack & C++ Developer",
-    },
-    {
-      img: "/contact.png",
-      name: "Dharun Raj R",
-      role: "UI/UX Designer",
-    },
-    {
-      img: "/contact.png",
-      name: "Mahendhiran S",
-      role: "UI/UX Designer",
-    },
-    {
-      img: "/contact.png",
-      name: "Mahendhiran S",
-      role: "UI/UX Designer",
-    },
-  ];
+  const [studentMembers, setStudentMembers] = useState<Member[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  const api = process.env.NEXT_PUBLIC_API_URL;
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await fetch(api + "/members");
+
+        if (!res.ok) {
+          throw new Error(`Failed to fetch: ${res.statusText}`);
+        }
+
+        const data: Member[] = await res.json();
+        setStudentMembers(data);
+      } catch (err) {
+        console.error("Error fetching data:", err);
+        setError("Failed to load members. Please try again later.");
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchData();
+  }, [api]);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
+
+  const advisers = studentMembers.filter((i) => i.role === "adviser");
+  const faculties = studentMembers.filter((i) => i.role === "faculty");
+  const students = studentMembers.filter((i) => i.role === "student");
+
   return (
     <section className="pt-[15vh] pb-[10rem]">
       <div className="flex flex-col gap-[4rem]">
+        {/* Overall Incharge Section */}
         <div className="flex flex-col justify-center w-full gap-[2rem]">
           <div className="flex flex-col gap-2 justify-center relative mx-auto">
-            <div className="size-[10rem] rounded-full bg-[#EB0000]/30 blur-3xl lg:blur-6xl absolute top-0 left-[30%] lg:left-[45%] right-[30%] mix-blend-plus-lighter"></div>
-            <div className="w-fit mx-auto">
-              <p className="text-center text-3xl lg:text-4xl text-white font-semibold font-poppins">
-                Overall Incharge
-              </p>
-              <UnderLine className={""} />
+            <div className="flex flex-col gap-2 justify-center relative mx-auto">
+              <div className="size-[10rem] rounded-full bg-[#EB0000]/30 blur-3xl lg:blur-6xl absolute top-0 left-[30%] lg:left-[45%] right-[30%] mix-blend-plus-lighter"></div>
+              <div className="w-fit mx-auto">
+                <p className="text-center text-3xl lg:text-4xl text-white font-semibold font-poppins">
+                  Overall Incharge
+                </p>
+
+                <UnderLine className={""} />
+              </div>
             </div>
           </div>
-          <div className="flex flex-col mx-auto max-w-[18rem]">
-            <div className="h-72 w-full rounded-t-2xl overflow-hidden">
-              <Image
-                className="w-full h-full object-cover opacity-75"
-                height={500}
-                width={500}
-                src={"/hod.png"}
-                alt="Logo"
-              />
-            </div>
-            <div className="flex flex-col gap-2 bg-gradient-to-l from-[#9C0000] to-[#9B006D] text-white px-[0.7rem] py-[1rem] rounded-b-2xl">
-              <p className="text-2xl font-bold text-center">
-                Dr.RajaSekaran P.hd
-              </p>
-              <p className="text-center font-medium text-md">
-                Head of Computer Science Engineering{" "}
-              </p>
-            </div>
-          </div>
+          {advisers.map((item) => (
+            <MemberCard key={item.id} member={item} />
+          ))}
         </div>
+
+        {/* Faculty Incharge Section */}
         <div className="flex flex-col justify-center w-full gap-[2rem]">
           <div className="flex flex-col gap-2 justify-center relative mx-auto">
-            <div className="size-[10rem] rounded-full bg-[#EB0000]/30 blur-3xl lg:blur-6xl absolute top-0 left-[30%] lg:left-[45%] right-[30%] mix-blend-plus-lighter"></div>
-            <div className="w-fit mx-auto">
-              <p className="text-center text-3xl lg:text-4xl text-white font-semibold font-poppins">
-                Faculty Incharge
-              </p>
-              <UnderLine className={""} />
-            </div>
+            {/* ... title JSX ... */}
           </div>
           <div className="flex flex-col lg:flex-row gap-[2rem] lg:gap-[5rem] mx-auto">
-            <div className="flex flex-col mx-auto lg:m-0 max-w-[18rem] ">
-              <div className="h-72 w-full rounded-t-2xl overflow-hidden">
-                <Image
-                  className="w-full h-full object-cover opacity-75"
-                  height={500}
-                  width={500}
-                  src={"/f1.png"}
-                  alt="Logo"
-                />
-              </div>
-              <div className="flex flex-col gap-2 bg-gradient-to-l from-[#9C0000] to-[#9B006D] text-white px-[0.7rem] py-[1rem] rounded-b-2xl">
-                <p className="text-2xl font-bold text-center">
-                  Ms.D.Vinoparkavi, M.E
-                </p>
-                <p className="text-center font-medium text-md">
-                  Department of computer science Engineering
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-col mx-auto lg:m-0 max-w-[18rem]">
-              <div className="h-72 w-full rounded-t-2xl overflow-hidden">
-                <Image
-                  className="w-full h-full object-cover opacity-75"
-                  height={500}
-                  width={500}
-                  src={"/f2.png"}
-                  alt="Logo"
-                />
-              </div>
-              <div className="flex flex-col gap-2 bg-gradient-to-l from-[#9C0000] to-[#9B006D] text-white px-[0.7rem] py-[1rem] rounded-b-2xl">
-                <p className="text-2xl font-bold text-center">
-                  Mr.R.Manikandan, M.Tech
-                </p>
-                <p className="text-center font-medium text-md">
-                  Department of computer science Engineering
-                </p>
-              </div>
-            </div>
+            {faculties.map((item) => (
+              <MemberCard key={item.id} member={item} />
+            ))}
           </div>
         </div>
+
+        {/* Student Members Section */}
         <div className="w-full justify-center lg:px-[3rem]">
           <div className="flex flex-col gap-2 justify-center relative mx-auto">
-            <div className="size-[10rem] rounded-full bg-[#EB0000]/30 blur-3xl lg:blur-6xl absolute top-0 left-[30%] lg:left-[45%] right-[30%] mix-blend-plus-lighter"></div>
-            <div className="w-fit mx-auto">
-              <p className="text-center text-3xl lg:text-4xl text-white font-semibold font-poppins">
-                Student Members
-              </p>
-              <UnderLine className={""} />
-            </div>
+            {/* ... title JSX ... */}
           </div>
           <ul className="flex flex-col lg:flex-row lg:flex-wrap justify-center gap-[5rem] w-full py-[4rem]">
-            {studentMembers.map((item, index) => (
-              <li key={index}>
-                <div className="flex flex-col mx-auto max-w-[18rem] lg:max-w-[17rem] lg:m-0">
-                  <div className="h-72 w-full rounded-t-2xl overflow-hidden">
-                    <Image
-                      className="w-full h-full object-cover opacity-75"
-                      height={500}
-                      width={500}
-                      src={item.img}
-                      alt={item.name}
-                    />
-                  </div>
-                  <div className="flex flex-col gap-2 bg-gradient-to-l from-[#9C0000] to-[#9B006D] text-white px-[0.7rem] py-[1rem] rounded-b-2xl">
-                    <p className="text-2xl font-bold text-center">
-                      {item.name}
-                    </p>
-                    <p className="text-center font-medium text-md">
-                      {item.role}
-                    </p>
-                  </div>
-                </div>
+            {students.map((item) => (
+              <li key={item.id}>
+                <MemberCard member={item} />
               </li>
             ))}
           </ul>
