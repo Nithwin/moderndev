@@ -2,6 +2,32 @@
 
 [![Contributors](https://img.shields.io/github/contributors/Nithwin/moderndev?style=flat-square)](https://github.com/Nithwin/moderndev/graphs/contributors)
 
+<!-- Animated colorful banner (small, safe inline SVG) and live demo badges -->
+<p align="center">
+  <svg width="100%" height="80" viewBox="0 0 1200 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Modern Dev banner">
+    <defs>
+      <linearGradient id="grad" x1="0%" x2="100%">
+        <stop offset="0%" stop-color="#ff7a7a">
+          <animate attributeName="stop-color" values="#ff7a7a;#ffb86b;#fff176;#7ee8fa;#b39ddb;#ff7a7a" dur="8s" repeatCount="indefinite" />
+        </stop>
+        <stop offset="100%" stop-color="#7ee8fa">
+          <animate attributeName="stop-color" values="#7ee8fa;#b39ddb;#fff176;#ffb86b;#ff7a7a;#7ee8fa" dur="8s" repeatCount="indefinite" />
+        </stop>
+      </linearGradient>
+    </defs>
+    <rect width="1200" height="80" rx="8" fill="#0b1220" />
+    <g>
+      <text x="24" y="44" font-family="Poppins, Arial, sans-serif" font-size="28" font-weight="700" fill="url(#grad)">Modern Dev</text>
+      <text x="24" y="64" font-family="Inter, Arial, sans-serif" font-size="12" fill="#9aa4b2">Student-run lab — build, learn, collaborate</text>
+    </g>
+  </svg>
+
+  <!-- Live demo badges -->
+  <br/>
+  <a href="https://moderndev.vercel.app/" title="Open live demo"><img src="https://img.shields.io/badge/Live-Demo-brightgreen?style=flat-square&logo=google-chrome" alt="Live Demo"/></a>
+  <a href="https://moderndev.vercel.app/" title="Hosted on Vercel"><img src="https://img.shields.io/badge/Hosted-Vercel-000?style=flat-square&logo=vercel" alt="Vercel"/></a>
+</p>
+
 **Contributors:** See the full list in [MEMBERS.md](./MEMBERS.md). To add yourself, follow the steps in [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 > Modern Dev is a student-run lab where we design and build mobile and web applications together — a place to learn, collaborate, and ship projects.

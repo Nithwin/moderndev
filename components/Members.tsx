@@ -44,13 +44,20 @@ const Members = () => {
   useEffect(() => {
     async function fetchData() {
       try {
+        if (!supabase) {
+          // Supabase client isn't available (likely missing env vars during prerender)
+          throw new Error(
+            "Supabase client is not configured. Ensure NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY are set."
+          );
+        }
+
         const { data, error } = await supabase.from("members").select("*");
 
         if (error) {
           throw new Error(`Failed to fetch: ${error.message}`);
         }
-        
-        setStudentMembers(data);
+
+        setStudentMembers(data || []);
       } catch (err) {
         console.error("Error fetching data:", err);
         setError("Failed to load members. Please try again later.");
@@ -71,10 +78,10 @@ const Members = () => {
   return (
     <section className="pt-[15vh] pb-[10rem]">
       <div className="flex flex-col gap-[4rem]">
-        /**
+        {/*
          * Section for "Overall Incharge" members.
          * Displays a title and dynamically renders MemberCard components for advisers.
-         */
+         */}
         <div className="flex flex-col justify-center w-full gap-[2rem]">
           <motion.div
             className="flex flex-col gap-2 justify-center relative mx-auto"
@@ -106,10 +113,10 @@ const Members = () => {
           ))}
         </div>
 
-        /**
+        {/*
          * Section for "Faculty Incharge" members.
          * Displays a title and dynamically renders MemberCard components for faculty.
-         */
+         */}
         <div className="flex flex-col justify-center w-full gap-[2rem]">
           <motion.div
             className="flex flex-col gap-2 justify-center relative mx-auto"
@@ -141,10 +148,10 @@ const Members = () => {
           </div>
         </div>
 
-        /**
+        {/*
          * Section for "Student Members".
          * Displays a title and dynamically renders MemberCard components for students.
-         */
+         */}
         <div className="w-full justify-center lg:px-[3rem]">
           <motion.div
             className="flex flex-col gap-2 justify-center relative mx-auto"

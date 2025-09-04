@@ -27,11 +27,10 @@ const Achievement: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Fetch data from Supabase
   /**
- * Fetches achievement data from Supabase.
- * Sets loading state, handles errors, and updates achievements state.
- */
+   * Fetches achievement data from Supabase.
+   * Sets loading state, handles errors, and updates achievements state.
+   */
   useEffect(() => {
     async function fetchData() {
       try {
@@ -42,27 +41,26 @@ const Achievement: React.FC = () => {
         setAchievements(data as Achievement[]);
       } catch (err) {
         /**
- * Handles errors during data fetching.
- * Checks if the error is an instance of Error to safely access its message.
- */
+         * Handles errors during data fetching.
+         * Checks if the error is an instance of Error to safely access its message.
+         */
         if (err instanceof Error) {
-            console.error("Error fetching achievements:", err.message);
-            setError(`Failed to load achievements: ${err.message}`);
+          console.error("Error fetching achievements:", err.message);
+          setError(`Failed to load achievements: ${err.message}`);
         } else {
-            console.error("An unknown error occurred:", err);
-            setError("An unknown error occurred. Please try again later.");
+          console.error("An unknown error occurred:", err);
+          setError("An unknown error occurred. Please try again later.");
         }
       } finally {
         setLoading(false);
-      } // The empty dependency array is correct, this runs once on mount.
+      }
     }
     fetchData();
-  }, []);
-  /**
- * Manages the auto-scrolling behavior of the achievement carousel.
- */
+  }, []); // The empty dependency array is correct; this runs once on mount.
 
-  // Auto-scrolling logic for the carousel
+  /**
+   * Manages the auto-scrolling behavior of the achievement carousel.
+   */
   useEffect(() => {
     if (achievements.length > 1) {
       const interval = setInterval(() => {
@@ -70,7 +68,8 @@ const Achievement: React.FC = () => {
           prevIndex === achievements.length - 1 ? 0 : prevIndex + 1
         );
       }, 5000);
-      return () => clearInterval(interval); // Cleanup interval on component unmount
+      // Cleanup interval on component unmount
+      return () => clearInterval(interval);
     }
   }, [achievements]);
 
@@ -121,13 +120,15 @@ const Achievement: React.FC = () => {
             <Loader className="text-red-600 animate-spin" />
           </div>
           <div className="aspect-video rounded-xl overflow-hidden relative">
+            {/* Key to ensure React re-renders the image when the achievement changes */}
+            {/* Fallback image if img is not available */}
             <Image
               className="w-full h-full object-cover opacity-75"
               height={10000}
               width={10000}
-              src={currentAchievement.img || "/placeholder.jpg"} // Fallback image if img is not available
+              src={currentAchievement.img || "/placeholder.jpg"}
               alt={currentAchievement.title}
-              key={currentAchievement.id} // Key to ensure React re-renders the image when the achievement changes
+              key={currentAchievement.id}
             />
             <div className="absolute bottom-0 z-10 left-0 right-0 bg-black/10 backdrop-blur-lg lg:backdrop-blur-2xl px-2 py-1 lg:py-[1rem]">
               <p className="text-white text-[0.5rem] lg:text-2xl text-center font-inter font-semibold">
@@ -142,3 +143,4 @@ const Achievement: React.FC = () => {
 };
 
 export default Achievement;
+

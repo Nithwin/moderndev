@@ -49,21 +49,18 @@ const MemberCard: FC<MemberCardProps> = ({ member }) => {
       className="flex flex-col mx-auto max-w-[18rem] min-w-[18rem] lg:max-w-[17rem] relative group"
     >
       {/* Image container with rounded top corners */}
-      /**
- * Image container for the member's profile picture.
- * Applies rounded top corners and overflow hidden for the image.
- */
+      {/* Image container for the member's profile picture.
+      Applies rounded top corners and overflow hidden for the image. */}
       <div className="h-72 w-full rounded-t-2xl overflow-hidden relative">
         <Image
           className="w-full h-full object-cover opacity-75 group-hover:opacity-100 transition-opacity duration-300"
           height={500}
           width={500}
           src={member.img || "/contact.png"}
-          alt={member.name}
+          alt={member.name} 
         />
-        /**
- * Overlay that appears on hover, displaying the member's description and social links.
- */
+        {/* Overlay that appears on hover, displaying the member's description and social links.
+        */}
         <div
           className="absolute inset-0 bg-black/70 flex flex-col justify-center items-center text-white
                      opacity-0 group-hover:opacity-100 transition-opacity duration-300
@@ -71,15 +68,12 @@ const MemberCard: FC<MemberCardProps> = ({ member }) => {
         >
           {/* Description text with smaller font and scroll if too long */}
           <p className="mb-3 text-xs sm:text-sm overflow-y-auto max-h-[70%] custom-scrollbar">
-            /**
- * Displays the member's description, with a fallback if no description is provided.
- * Allows scrolling if the text is too long.
- */
-            {member.description || "No description available."}
-          </p>
-          /**
- * Container for social media and portfolio links.
- */
+            {/* Displays the member's description, with a fallback if no description is provided.
+            Allows scrolling if the text is too long. */}
+            {member.description || "No description available."} 
+          </p>{/*
+           * Container for social media and portfolio links.
+           */}
           <div className="flex gap-4 mt-auto pb-2">
             {member.portfolio && (
               <a href={member.portfolio} target="_blank" rel="noopener noreferrer" aria-label={`Portfolio for ${member.name}`}>
@@ -98,11 +92,9 @@ const MemberCard: FC<MemberCardProps> = ({ member }) => {
             )}
           </div>
         </div>
-      </div>
-      /**
- * Displays the member's name and specialization.
- * Styled with a gradient background and rounded bottom corners.
- */
+      </div> 
+      {/* Displays the member's name and specialization.
+      Styled with a gradient background and rounded bottom corners. */}
       <div className="flex flex-col gap-2 bg-gradient-to-l from-[#9C0000] to-[#9B006D] text-white px-[0.7rem] py-[1rem] rounded-b-2xl">
         <p className="text-2xl font-bold text-center">
           {member.name}

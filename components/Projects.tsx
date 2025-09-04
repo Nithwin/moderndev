@@ -118,10 +118,10 @@ const Projects = () => {
         </div>
         {/* "View More" button section */}
         <div className="flex justify-center gap-2">
-          /**
+          {/*
            * Button to view more projects.
            * Currently a placeholder, but can be linked to a dedicated projects page or load more functionality.
-           */
+           */}
           <button className="flex font-poppins items-center bg-gradient-to-r w-fit from-[#EB0000] to-[#FF00B2] py-2 px-6 text-sm font-semibold text-center rounded-full text-white">
             View More
             {/* Icon for "View More" */}

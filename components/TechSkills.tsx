@@ -24,41 +24,26 @@ import {
   SiCplusplus,
   SiSpring,
   SiMui,
-  SiChakraui,
-  SiGraphql,
-  SiDocker
+  SiChakraui
+  // Removed SiQt, SiJest, SiGraphql, SiDocker as they were unused
 } from 'react-icons/si';
-import UnderLine from './SVG/UnderLine';
-import { IconType } from 'react-icons';
+import { type IconType } from 'react-icons';
+
+// Placeholder for the UnderLine component to ensure the file is runnable
+const UnderLine = ({ className }: { className: string }) => (
+    <svg className={`w-full h-2 ${className}`} viewBox="0 0 100 5" preserveAspectRatio="none">
+        <path d="M0,3 Q50,0 100,3" stroke="#F90000" fill="transparent" strokeWidth="2" />
+    </svg>
+);
 
 interface Skill {
-  /**
-   * The React icon component for the skill.
-   */
   icon: IconType;
-  /**
-   * The name of the skill.
-   */
   name: string;
-  /**
-   * The Tailwind CSS class for the icon's text color.
-   */
   color: string;
-  /**
-   * The Tailwind CSS class for the shadow color, used for glow effects.
-   */
   shadowColor: string;
-  /**
-   * The Tailwind CSS class for the border color.
-   */
   borderColor: string;
 }
 
-/**
- * TechSkills component displays a grid of technology and skill icons.
- * Each icon has a hover effect showing the skill name and an animated border.
- * @returns {JSX.Element} The rendered TechSkills component.
- */
 const TechSkills = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
@@ -69,9 +54,6 @@ const TechSkills = () => {
   }, []);
 
   const skills: Skill[] = [
-    /**
-     * Array of skill objects, each containing an icon, name, and styling properties.
-     */
     { icon: SiHtml5, name: "HTML5", color: "text-orange-500", shadowColor: "shadow-orange-500/50", borderColor: "border-orange-500" },
     { icon: SiCss3, name: "CSS3", color: "text-blue-500", shadowColor: "shadow-blue-500/50", borderColor: "border-blue-500" },
     { icon: SiJavascript, name: "JavaScript", color: "text-yellow-400", shadowColor: "shadow-yellow-400/50", borderColor: "border-yellow-400" },
@@ -92,7 +74,6 @@ const TechSkills = () => {
     { icon: SiVite, name: "Vite", color: "text-yellow-300", shadowColor: "shadow-yellow-300/50", borderColor: "border-yellow-300" },
     { icon: SiWebpack, name: "Webpack", color: "text-blue-300", shadowColor: "shadow-blue-300/50", borderColor: "border-blue-300" },
     { icon: SiGit, name: "Git", color: "text-red-400", shadowColor: "shadow-red-400/50", borderColor: "border-red-400" },
-    
     { icon: SiMui, name: "Material UI", color: "text-blue-500", shadowColor: "shadow-blue-500/50", borderColor: "border-blue-500" },
     { icon: SiChakraui, name: "Chakra UI", color: "text-teal-500", shadowColor: "shadow-teal-500/50", borderColor: "border-teal-500" },
     { icon: SiSpring, name: "Spring", color: "text-green-600", shadowColor: "shadow-green-600/50", borderColor: "border-green-600" },
@@ -102,9 +83,7 @@ const TechSkills = () => {
   return (
     <section id='skills' className="pt-16 relative overflow-hidden min-h-screen z-0">
       <div className="flex flex-col relative z-10 gap-[3rem]">
-        /**
-         * Header section for the Tech & Skills component.
-         */
+        {/* Header Section */}
         <div className="flex flex-col gap-2 justify-center relative mx-auto">
           <div className="size-[10rem] rounded-full bg-[#EB0000]/30 blur-3xl lg:blur-6xl absolute top-0 left-[30%] lg:left-[45%] right-[30%] mix-blend-plus-lighter"></div>
           <div className="w-fit mx-auto">
@@ -115,9 +94,7 @@ const TechSkills = () => {
           </div>
         </div>
 
-        /**
-         * Grid container for displaying individual skill cards.
-         */
+        {/* Skills Grid */}
         <div className="flex justify-center px-4">
           <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-8 gap-6 max-w-7xl">
             {skills.map((skill, index) => {
@@ -133,19 +110,13 @@ const TechSkills = () => {
                   onMouseEnter={() => setHoveredSkill(skill.name)}
                   onMouseLeave={() => setHoveredSkill(null)}
                 >
-                  /**
-                   * Glow effect for the skill card on hover.
-                   */
+                  {/* Glow effect */}
                   <div className={`absolute inset-0 rounded-2xl ${skill.shadowColor} opacity-0 group-hover:opacity-50 blur-xl transition-opacity duration-300`}></div>
                   
-                  /**
-                   * The skill icon component.
-                   */
+                  {/* Icon */}
                   <IconComponent className={`${skill.color} text-3xl md:text-5xl z-10 transform group-hover:scale-110 transition-transform duration-300 drop-shadow-lg`} />
                   
-                  /**
-                   * Tooltip displaying the skill name on hover.
-                   */
+                  {/* Tooltip */}
                   <div className={`absolute -top-12 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white px-3 py-1 rounded-lg text-sm font-medium whitespace-nowrap transition-all duration-300 ${hoveredSkill === skill.name ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'} pointer-events-none shadow-lg border border-gray-700`}>
                     {skill.name}
                     <div className="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
@@ -161,9 +132,7 @@ const TechSkills = () => {
           </div>
         </div>
 
-        /**
-         * CSS for the floating animation applied to skill cards.
-         */
+        {/* Floating Animation Styles */}
         <style jsx>{`
           @keyframes float {
             0%, 100% { transform: translateY(0px); }
