@@ -12,7 +12,7 @@ const Contact = () => {
   });
 
   // This function updates the state when the user types in an input field
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -21,7 +21,7 @@ const Contact = () => {
   };
 
   // This function runs when the form is submitted
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     // Prevent the default browser action for form submission
     e.preventDefault();
 
