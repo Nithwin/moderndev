@@ -49,29 +49,8 @@ const PreLoader = () => {
     return () => clearInterval(lightningInterval);
   }, []);
   // Client-only particle data (generated on mount to avoid SSR hydration mismatches)
-  type FireParticle = {
-    width: number;
-    height: number;
-    background: string;
-    left: string;
-    xShift: number;
-    duration: number;
-    delay: number;
-  };
-
-  type EmberParticle = {
-    left: string;
-    top: string;
-    x1: number;
-    x2: number;
-    y1: number;
-    y2: number;
-    duration: number;
-    delay: number;
-  };
-
-  const [fireParticlesData, setFireParticlesData] = useState<FireParticle[]>([]);
-  const [emberParticlesData, setEmberParticlesData] = useState<EmberParticle[]>([]);
+  const [fireParticlesData, setFireParticlesData] = useState<any[]>([]);
+  const [emberParticlesData, setEmberParticlesData] = useState<any[]>([]);
 
   useEffect(() => {
     // generate particle data only on client
