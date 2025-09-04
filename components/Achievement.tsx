@@ -132,7 +132,7 @@ const Achievement: React.FC = () => {
             />
             <div className="absolute bottom-0 z-10 left-0 right-0 bg-black/10 backdrop-blur-lg lg:backdrop-blur-2xl px-2 py-1 lg:py-[1rem]">
               <p className="text-white text-[0.5rem] lg:text-2xl text-center font-inter font-semibold">
-                {currentAchievement.description}
+                {currentAchievement.title}
               </p>
             </div>
           </div>

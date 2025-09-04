@@ -45,9 +45,13 @@ const Header = () => {
 
   return (
     <header className="bg-black/10 backdrop-blur-3xl w-full fixed z-50">
-      <div className="flex justify-between py-2 items-center px-4 md:px-8">
+      <div className="flex justify-between py-2 items-center px-4 md:px-8 relative">
         {/* Logo and Site Title */}
-        <Link className="flex items-center" href="/#hero" onClick={() => handleScroll("/#hero")}>
+        <Link
+          className="flex items-center"
+          href="/#hero"
+          onClick={() => handleScroll("/#hero")}
+        >
           <Image
             className="w-14"
             height={100}
@@ -64,12 +68,20 @@ const Header = () => {
         <div className="lg:flex hidden items-center space-x-12">
           <ul className="flex gap-[3rem] font-medium text-lg text-gray-300 font-inter">
             <li>
-              <Link href="/#vision" onClick={() => handleScroll("/#vision")} className="hover:text-white transition-colors duration-200">
+              <Link
+                href="/#vision"
+                onClick={() => handleScroll("/#vision")}
+                className="hover:text-white transition-colors duration-200"
+              >
                 <span>Vision</span>
               </Link>
             </li>
             <li>
-              <Link href="/#projects" onClick={() => handleScroll("/#projects")} className="hover:text-white transition-colors duration-200">
+              <Link
+                href="/#projects"
+                onClick={() => handleScroll("/#projects")}
+                className="hover:text-white transition-colors duration-200"
+              >
                 <span>Projects</span>
               </Link>
             </li>
@@ -83,17 +95,25 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link href="/#skills" onClick={() => handleScroll("/#skills")} className="hover:text-white transition-colors duration-200">
+              <Link
+                href="/#skills"
+                onClick={() => handleScroll("/#skills")}
+                className="hover:text-white transition-colors duration-200"
+              >
                 <span>Skills</span>
               </Link>
             </li>
             <li>
-              <Link href="/#contact" onClick={() => handleScroll("/#contact")} className="hover:text-white transition-colors duration-200">
+              <Link
+                href="/#contact"
+                onClick={() => handleScroll("/#contact")}
+                className="hover:text-white transition-colors duration-200"
+              >
                 <span>Contact</span>
               </Link>
             </li>
           </ul>
-          <Link href="/#contact" onClick={() => handleScroll("/#contact")}>
+          <Link href="https://forms.gle/GzkTkuUUw83rwAP5A">
             <button className="delay-150 ease-linear transition-all hover:scale-110 cursor-pointer text-white font-inter text-xl bg-gradient-to-r from-[#EB0000] to-[#FF00B2] px-[1.5rem] py-2 rounded-full font-semibold">
               Join Us
             </button>
@@ -119,7 +139,7 @@ const Header = () => {
         <div
           className={`${
             open ? "translate-x-0" : "translate-x-full"
-          } transform transition-transform duration-300 ease-in-out fixed top-0 right-0 h-full w-full backdrop-blur-3xl bg-red-950/80 flex lg:hidden justify-center items-center z-10`}
+          } transform transition-transform duration-300 ease-in-out fixed top-[4rem] right-0 h-[90vh] w-full backdrop-blur-3xl bg-red-950/80 flex lg:hidden justify-center items-center z-10`}
         >
           <ul className="flex flex-col items-center justify-center gap-12 text-2xl text-red-100 font-inter">
             <li>
@@ -133,7 +153,10 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link href="/#projects" onClick={() => handleScroll("/#projects")}>
+              <Link
+                href="/#projects"
+                onClick={() => handleScroll("/#projects")}
+              >
                 <span>Projects</span>
               </Link>
             </li>
@@ -150,6 +173,13 @@ const Header = () => {
             <li>
               <Link href="/#contact" onClick={() => handleScroll("/#contact")}>
                 <span>Contact</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="https://forms.gle/GzkTkuUUw83rwAP5A">
+                <button className="delay-150 ease-linear transition-all hover:scale-110 cursor-pointer text-white font-inter text-xl bg-gradient-to-r from-[#EB0000] to-[#FF00B2] px-[1.5rem] py-2 rounded-full font-semibold">
+                  Join Us
+                </button>
               </Link>
             </li>
           </ul>
