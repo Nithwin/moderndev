@@ -12,7 +12,7 @@ const Contact = () => {
   });
 
   // This function updates the state when the user types in an input field
-  const handleChange = (e:any) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -21,7 +21,7 @@ const Contact = () => {
   };
 
   // This function runs when the form is submitted
-  const handleSubmit = (e:any) => {
+  const handleSubmit = (e) => {
     // Prevent the default browser action for form submission
     e.preventDefault();
 

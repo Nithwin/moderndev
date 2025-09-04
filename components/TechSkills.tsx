@@ -89,7 +89,7 @@ const TechSkills = () => {
         {/* Skills Grid */}
         <div className="flex justify-center px-4">
           <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-8 gap-6 max-w-7xl">
-            {skills.map((skill:any, index) => {
+            {skills.map((skill, index) => {
               const IconComponent = skill.icon;
               return (
                 <div

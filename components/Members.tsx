@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import UnderLine from "./SVG/UnderLine";
-import Image from "next/image";
 import MemberCard from "./MemberCard";
 import { supabase } from "@/lib/supabaseClient";
 
@@ -36,7 +35,7 @@ const Members = () => {
         console.log(data);
         
         setStudentMembers(data);
-      } catch (err: any) {
+      } catch (err) {
         console.error("Error fetching data:", err);
         setError("Failed to load members. Please try again later.");
       } finally {

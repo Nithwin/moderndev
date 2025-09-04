@@ -101,7 +101,7 @@ const Hero: React.FC = () => {
               className="delay-150 ease-linear transition-all hover:scale-110" // Original classes preserved but motion will override hover
             >
               <span className="cursor-pointer text-white border-2 border-red-950 font-inter text-xl bg-gradient-to-r from-[#EB0000] to-[#FF00B2] px-[1.5rem] py-[0.5rem] rounded-full font-semibold ">
-                Let's Connect
+                Let&apos;s Connect
               </span>
             </motion.button>
           </motion.div>

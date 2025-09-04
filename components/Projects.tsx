@@ -33,7 +33,7 @@ const Projects = () => {
         console.log(data);
         
         setProjects(data as Project[]);
-      } catch (err: any) {
+      } catch (err) {
         console.error("Error fetching data:", err);
         setError("Failed to load projects. Please try again later.");
       } finally {

@@ -27,7 +27,7 @@ const Achievement = () => {
           throw new Error(`Failed to fetch achievements: ${error.message}`);
         }
         setAchievements(data as Achievement[]);
-      } catch (err: any) {
+      } catch (err) {
         console.error("Error fetching achievements:", err);
         setError("Failed to load achievements. Please try again later.");
       } finally {

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { SiGithub,SiLinkedin,SiInstagram,SiFacebook  } from "react-icons/si";
 const Footer = () => {
-  let contacts = [
+  const contacts = [
     {
       icon: SiGithub,
       link: "",
