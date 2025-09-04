@@ -2,6 +2,28 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const PreLoader = () => {
+  // Particle data shapes
+  type FireParticle = {
+    width: number;
+    height: number;
+    background: string;
+    left: string;
+    xShift: number;
+    duration: number;
+    delay: number;
+  };
+
+  type EmberParticle = {
+    left: string;
+    top: string;
+    x1: number;
+    x2: number;
+    y1: number;
+    y2: number;
+    duration: number;
+    delay: number;
+  };
+
   const [progress, setProgress] = useState(0);
   const [currentPhase, setCurrentPhase] = useState(0);
   const [windowHeight, setWindowHeight] = useState(0);
@@ -49,8 +71,8 @@ const PreLoader = () => {
     return () => clearInterval(lightningInterval);
   }, []);
   // Client-only particle data (generated on mount to avoid SSR hydration mismatches)
-  const [fireParticlesData, setFireParticlesData] = useState<any[]>([]);
-  const [emberParticlesData, setEmberParticlesData] = useState<any[]>([]);
+  const [fireParticlesData, setFireParticlesData] = useState<FireParticle[]>([]);
+  const [emberParticlesData, setEmberParticlesData] = useState<EmberParticle[]>([]);
 
   useEffect(() => {
     // generate particle data only on client

@@ -49,9 +49,9 @@ export const metadata: Metadata = {
     images: ['https://moderndev.vercel.app/og-image.png'], // Must be an absolute URL
   },
   // Add your Google Search Console verification tag here if you choose that method
-  // verification: {
-  //   google: 'YOUR_GOOGLE_VERIFICATION_CODE',
-  // },
+  verification: {
+    google: 'google60f7523fac2cca9a.html',
+  },
 };
 
 export default function RootLayout({
