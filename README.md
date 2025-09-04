@@ -7,7 +7,14 @@
 > Modern Dev is a student-run lab where we design and build mobile and web applications together — a place to learn, collaborate, and ship projects.
 
 We are a group of college students working on real apps, helping each other grow, and keeping everything open-source so other students can learn and contribute.
+## Vision
 
+We believe in learning by doing. Modern Dev provides a platform for students to:
+
+- **Collaborate** on real-world projects.
+- **Learn** modern development practices.
+- **Ship** impactful applications.
+- **Grow** as developers and team members.
 ## Demo (Screenshot preview)
 
 This is how the app looks

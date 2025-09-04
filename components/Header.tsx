@@ -5,21 +5,40 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
+/**
+ * Header component for the ModernDev website.
+ * Provides navigation links, a logo, and a mobile-responsive menu.
+ */
 const Header = () => {
+  /**
+   * State to control the visibility of the mobile menu.
+   * @type {boolean}
+   */
   const [open, setOpen] = useState(false);
+  /**
+   * Next.js router instance for programmatic navigation.
+   */
   const router = useRouter();
 
+  /**
+   * Closes the mobile menu.
+   */
   const closeMenu = () => {
     setOpen(false);
   };
 
+  /**
+   * Handles navigation, either to an anchor on the current page or a new route.
+   * Closes the mobile menu after navigation.
+   * @param {string} path - The path to navigate to (e.g., "/#vision", "/members").
+   */
   const handleScroll = (path: string) => {
-    // Check if the path is an anchor link
+    // Check if the path is an anchor link (starts with "/#")
     if (path.startsWith("/#")) {
-      router.push(path, { scroll: true });
+      router.push(path, { scroll: true }); // Navigate to the anchor with smooth scrolling
       closeMenu();
     } else {
-      router.push(path);
+      router.push(path); // Navigate to a new page
       closeMenu();
     }
   };
@@ -27,6 +46,7 @@ const Header = () => {
   return (
     <header className="bg-black/10 backdrop-blur-3xl w-full fixed z-50">
       <div className="flex justify-between py-2 items-center px-4 md:px-8">
+        {/* Logo and Site Title */}
         <Link className="flex items-center" href="/#hero" onClick={() => handleScroll("/#hero")}>
           <Image
             className="w-14"
@@ -40,7 +60,7 @@ const Header = () => {
           </p>
         </Link>
 
-        {/* Desktop View */}
+        {/* Desktop Navigation */}
         <div className="lg:flex hidden items-center space-x-12">
           <ul className="flex gap-[3rem] font-medium text-lg text-gray-300 font-inter">
             <li>
@@ -80,7 +100,7 @@ const Header = () => {
           </Link>
         </div>
 
-        {/* Mobile menu button */}
+        {/* Mobile Menu Toggle Button */}
         <div className="lg:hidden z-20">
           {open ? (
             <X
@@ -95,7 +115,7 @@ const Header = () => {
           )}
         </div>
 
-        {/* Mobile View Menu */}
+        {/* Mobile Navigation Menu (Overlay) */}
         <div
           className={`${
             open ? "translate-x-0" : "translate-x-full"

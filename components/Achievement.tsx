@@ -4,6 +4,15 @@ import Image from "next/image";
 import { Loader } from "lucide-react";
 import { supabase } from "@/lib/supabaseClient";
 
+/**
+ * Defines the structure for an Achievement object.
+ * @interface Achievement
+ * @property {number} id - Unique identifier for the achievement.
+ * @property {string} created_at - Timestamp of when the achievement record was created.
+ * @property {string} title - The title of the achievement.
+ * @property {string} img - URL or path to the image representing the achievement.
+ * @property {string} description - A detailed description of the achievement.
+ */
 interface Achievement {
   id: number;
   created_at: string;
@@ -12,30 +21,46 @@ interface Achievement {
   description: string;
 }
 
-const Achievement = () => {
+const Achievement: React.FC = () => {
   const [achievements, setAchievements] = useState<Achievement[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // Fetch data from Supabase
+  /**
+ * Fetches achievement data from Supabase.
+ * Sets loading state, handles errors, and updates achievements state.
+ */
   useEffect(() => {
     async function fetchData() {
       try {
         const { data, error } = await supabase.from("achievements").select("*");
         if (error) {
-          throw new Error(`Failed to fetch achievements: ${error.message}`);
+          throw error;
         }
         setAchievements(data as Achievement[]);
       } catch (err) {
-        console.error("Error fetching achievements:", err.message);
-        setError("Failed to load achievements. Please try again later.");
+        /**
+ * Handles errors during data fetching.
+ * Checks if the error is an instance of Error to safely access its message.
+ */
+        if (err instanceof Error) {
+            console.error("Error fetching achievements:", err.message);
+            setError(`Failed to load achievements: ${err.message}`);
+        } else {
+            console.error("An unknown error occurred:", err);
+            setError("An unknown error occurred. Please try again later.");
+        }
       } finally {
         setLoading(false);
-      }
+      } // The empty dependency array is correct, this runs once on mount.
     }
     fetchData();
   }, []);
+  /**
+ * Manages the auto-scrolling behavior of the achievement carousel.
+ */
 
   // Auto-scrolling logic for the carousel
   useEffect(() => {
@@ -44,7 +69,7 @@ const Achievement = () => {
         setCurrentIndex((prevIndex) =>
           prevIndex === achievements.length - 1 ? 0 : prevIndex + 1
         );
-      }, 5000); // 5000ms = 5 seconds
+      }, 5000);
       return () => clearInterval(interval); // Cleanup interval on component unmount
     }
   }, [achievements]);
@@ -100,9 +125,9 @@ const Achievement = () => {
               className="w-full h-full object-cover opacity-75"
               height={10000}
               width={10000}
-              src={currentAchievement.img || "/placeholder.jpg"}
+              src={currentAchievement.img || "/placeholder.jpg"} // Fallback image if img is not available
               alt={currentAchievement.title}
-              key={currentAchievement.id}
+              key={currentAchievement.id} // Key to ensure React re-renders the image when the achievement changes
             />
             <div className="absolute bottom-0 z-10 left-0 right-0 bg-black/10 backdrop-blur-lg lg:backdrop-blur-2xl px-2 py-1 lg:py-[1rem]">
               <p className="text-white text-[0.5rem] lg:text-2xl text-center font-inter font-semibold">

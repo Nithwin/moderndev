@@ -5,6 +5,19 @@ import UnderLine from "./SVG/UnderLine";
 import MemberCard from "./MemberCard";
 import { supabase } from "@/lib/supabaseClient";
 
+/**
+ * Interface for a Member object.
+ * @interface Member
+ * @property {number} id - Unique identifier for the member.
+ * @property {string} name - The name of the member.
+ * @property {string} [email] - Optional email address of the member.
+ * @property {string} role - The role of the member (e.g., "adviser", "faculty", "student").
+ * @property {string} img - URL or path to the member's profile image.
+ * @property {string} specialization - The member's area of specialization.
+ * @property {string} [description] - Optional detailed description of the member.
+ * @property {string} [github] - Optional GitHub profile URL.
+ * @property {string} [linkedin] - Optional LinkedIn profile URL.
+ */
 interface Member {
   id: number;
   name: string;
@@ -17,12 +30,16 @@ interface Member {
   linkedin?: string;
 }
 
+/**
+ * Members component fetches and displays different categories of members (advisers, faculty, students)
+ * from Supabase. It uses `MemberCard` to render individual member details and includes
+ * animations for sections and member cards.
+ * @returns {JSX.Element} The rendered Members component.
+ */
 const Members = () => {
   const [studentMembers, setStudentMembers] = useState<Member[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-
-  const api = process.env.NEXT_PUBLIC_API_URL;
 
   useEffect(() => {
     async function fetchData() {
@@ -32,7 +49,6 @@ const Members = () => {
         if (error) {
           throw new Error(`Failed to fetch: ${error.message}`);
         }
-        console.log(data);
         
         setStudentMembers(data);
       } catch (err) {
@@ -55,7 +71,10 @@ const Members = () => {
   return (
     <section className="pt-[15vh] pb-[10rem]">
       <div className="flex flex-col gap-[4rem]">
-        {/* Overall Incharge Section */}
+        /**
+         * Section for "Overall Incharge" members.
+         * Displays a title and dynamically renders MemberCard components for advisers.
+         */
         <div className="flex flex-col justify-center w-full gap-[2rem]">
           <motion.div
             className="flex flex-col gap-2 justify-center relative mx-auto"
@@ -87,7 +106,10 @@ const Members = () => {
           ))}
         </div>
 
-        {/* Faculty Incharge Section */}
+        /**
+         * Section for "Faculty Incharge" members.
+         * Displays a title and dynamically renders MemberCard components for faculty.
+         */
         <div className="flex flex-col justify-center w-full gap-[2rem]">
           <motion.div
             className="flex flex-col gap-2 justify-center relative mx-auto"
@@ -119,7 +141,10 @@ const Members = () => {
           </div>
         </div>
 
-        {/* Student Members Section */}
+        /**
+         * Section for "Student Members".
+         * Displays a title and dynamically renders MemberCard components for students.
+         */
         <div className="w-full justify-center lg:px-[3rem]">
           <motion.div
             className="flex flex-col gap-2 justify-center relative mx-auto"

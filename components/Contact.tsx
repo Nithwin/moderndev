@@ -1,10 +1,19 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import UnderLine from "./SVG/UnderLine";
+import UnderLine from "./SVG/UnderLine"; // Importing the UnderLine component for styling
 
+/**
+ * Contact component provides a form for users to send messages.
+ * It uses state to manage form inputs and constructs a mailto link for submission.
+ */
 const Contact = () => {
-  // State to hold the form data (name, email, message)
+  /**
+   * State to hold the form data.
+   * @property {string} name - The name entered by the user.
+   * @property {string} email - The email entered by the user.
+   * @property {string} message - The message entered by the user.
+   */
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -12,6 +21,10 @@ const Contact = () => {
   });
 
   // This function updates the state when the user types in an input field
+  /**
+   * Handles changes to the form input fields.
+   * Updates the `formData` state with the new input value.
+   */
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -20,16 +33,23 @@ const Contact = () => {
     }));
   };
 
-  // This function runs when the form is submitted
-  const handleSubmit = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    // Prevent the default browser action for form submission
+  /**
+   * Handles the form submission.
+   * Prevents default form submission, constructs a mailto link, and opens the user's email client.
+   * @param {React.FormEvent<HTMLFormElement>} e - The form submission event.
+   */
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // !!! IMPORTANT: Replace this with your own email address !!!
+    /**
+     * The recipient email address for the contact form.
+     * IMPORTANT: Replace this with the actual email address where messages should be sent.
+     */
     const recipientEmail = "vmnithwin@gmail.com";
     
-    // Create the subject and body for the email using the form data
+    // Constructs the email subject line using the sender's name.
     const subject = `New Message from ${formData.name}`;
+    // Constructs the email body with the sender's details and message.
     const body = `You have a new message from your website contact form.\n\nHere are the details:\nName: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
 
     // Construct the mailto: URL
@@ -52,7 +72,6 @@ const Contact = () => {
           </div>
         </div>
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-15 px-[0.5rem] lg:px-[3rem] lg:items-stretch lg:justify-center">
-          {/* We wrap the fields in a form and attach the handleSubmit function */}
           <form
             onSubmit={handleSubmit}
             className="w-full lg:w-6/12 flex flex-col gap-6 bg-black/40 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 md:p-8 "
@@ -112,7 +131,6 @@ const Contact = () => {
               />
             </div>
             <div className="mt-auto">
-              {/* The button type is changed to "submit" to trigger the form's onSubmit event */}
               <button
                 type="submit"
                 className="cursor-pointer bg-gradient-to-r from-[#EB0000] to-[#FF00B2] w-full font-semibold font-poppins text-white py-3 rounded-xl transition-transform duration-300 hover:scale-105"
