@@ -72,9 +72,9 @@ const Members = () => {
   if (error) return <div>Error: {error}</div>;
 
   const advisers = studentMembers.filter((i) => i.role === "adviser");
-  const faculties = studentMembers.filter((i) => i.role === "faculty");
-  const students = studentMembers.filter((i) => i.role === "student");
-
+  const faculties = studentMembers.filter((i) => i.role === "faculty").sort((a, b) => a.id - b.id);
+  const students = studentMembers.filter((i) => i.role === "student").sort((a, b) => a.id - b.id);
+ 
   return (
     <section className="pt-[15vh] pb-[10rem]">
       <div className="flex flex-col gap-[4rem]">
@@ -100,7 +100,7 @@ const Members = () => {
               </div>
             </div>
           </motion.div>
-          {advisers.map((item, idx) => (
+          {advisers.sort((a, b) => a.id - b.id).map((item, idx) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, y: 50 }}
