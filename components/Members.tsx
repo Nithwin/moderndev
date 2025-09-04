@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import UnderLine from "./SVG/UnderLine";
 import Image from "next/image";
 import MemberCard from "./MemberCard";
@@ -57,7 +58,13 @@ const Members = () => {
       <div className="flex flex-col gap-[4rem]">
         {/* Overall Incharge Section */}
         <div className="flex flex-col justify-center w-full gap-[2rem]">
-          <div className="flex flex-col gap-2 justify-center relative mx-auto">
+          <motion.div
+            className="flex flex-col gap-2 justify-center relative mx-auto"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <div className="flex flex-col gap-2 justify-center relative mx-auto">
               <div className="size-[10rem] rounded-full bg-[#EB0000]/30 blur-3xl lg:blur-6xl absolute top-0 left-[30%] lg:left-[45%] right-[30%] mix-blend-plus-lighter"></div>
               <div className="w-fit mx-auto">
@@ -67,15 +74,29 @@ const Members = () => {
                 <UnderLine className={""} />
               </div>
             </div>
-          </div>
-          {advisers.map((item) => (
-            <MemberCard key={item.id} member={item} />
+          </motion.div>
+          {advisers.map((item, idx) => (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.15 }}
+            >
+              <MemberCard member={item} />
+            </motion.div>
           ))}
         </div>
 
         {/* Faculty Incharge Section */}
         <div className="flex flex-col justify-center w-full gap-[2rem]">
-          <div className="flex flex-col gap-2 justify-center relative mx-auto">
+          <motion.div
+            className="flex flex-col gap-2 justify-center relative mx-auto"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <div className="size-[10rem] rounded-full bg-[#EB0000]/30 blur-3xl lg:blur-6xl absolute top-0 left-[30%] lg:left-[45%] right-[30%] mix-blend-plus-lighter"></div>
             <div className="w-fit mx-auto">
               <p className="text-center text-3xl lg:text-4xl text-white font-semibold font-poppins">
@@ -83,17 +104,31 @@ const Members = () => {
               </p>
               <UnderLine className={""} />
             </div>
-          </div>
+          </motion.div>
           <div className="flex flex-col lg:flex-row gap-[2rem] lg:gap-[5rem] mx-auto">
-            {faculties.map((item) => (
-              <MemberCard key={item.id} member={item} />
+            {faculties.map((item, idx) => (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.15 }}
+              >
+                <MemberCard member={item} />
+              </motion.div>
             ))}
           </div>
         </div>
 
         {/* Student Members Section */}
         <div className="w-full justify-center lg:px-[3rem]">
-          <div className="flex flex-col gap-2 justify-center relative mx-auto">
+          <motion.div
+            className="flex flex-col gap-2 justify-center relative mx-auto"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <div className="size-[10rem] rounded-full bg-[#EB0000]/30 blur-3xl lg:blur-6xl absolute top-0 left-[30%] lg:left-[45%] right-[30%] mix-blend-plus-lighter"></div>
             <div className="w-fit mx-auto">
               <p className="text-center text-3xl lg:text-4xl text-white font-semibold font-poppins">
@@ -101,12 +136,18 @@ const Members = () => {
               </p>
               <UnderLine className={""} />
             </div>
-          </div>
+          </motion.div>
           <ul className="flex flex-col lg:flex-row lg:flex-wrap justify-center gap-[5rem] w-full py-[4rem]">
-            {students.map((item) => (
-              <li key={item.id}>
+            {students.map((item, idx) => (
+              <motion.li
+                key={item.id}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.10 }}
+              >
                 <MemberCard member={item} />
-              </li>
+              </motion.li>
             ))}
           </ul>
         </div>
