@@ -8,8 +8,12 @@
   <!-- Contributors avatars auto-generated from GitHub -->
   <!-- CONTRIBUTORS:START -->
 <p align="center">
-  <a href="https://github.com/Nithwin" target="_blank" rel="noopener noreferrer" title="Nithwin"><img src="https://avatars.githubusercontent.com/u/132214352?v=4&s=96" width="48" height="48" style="border-radius:50%; margin:4px;" alt="Nithwin"/></a>
-  <a href="https://github.com/Raju251004" target="_blank" rel="noopener noreferrer" title="Raju251004"><img src="https://avatars.githubusercontent.com/u/170350301?v=4&s=96" width="48" height="48" style="border-radius:50%; margin:4px;" alt="Raju251004"/></a>
+  <a href="https://github.com/Nithwin" target="_blank" rel="noopener noreferrer" title="Nithwin" style="display:inline-block; margin:4px; width:48px; height:48px; border-radius:50%; overflow:hidden;">
+    <img src="https://avatars.githubusercontent.com/u/132214352?v=4&s=96" width="48" height="48" style="display:block; object-fit:cover; width:48px; height:48px;" alt="Nithwin"/>
+  </a>
+  <a href="https://github.com/Raju251004" target="_blank" rel="noopener noreferrer" title="Raju251004" style="display:inline-block; margin:4px; width:48px; height:48px; border-radius:50%; overflow:hidden;">
+    <img src="https://avatars.githubusercontent.com/u/170350301?v=4&s=96" width="48" height="48" style="display:block; object-fit:cover; width:48px; height:48px;" alt="Raju251004"/>
+  </a>
 </p>
 <!-- CONTRIBUTORS:END -->
   <br />

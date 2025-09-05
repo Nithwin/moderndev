@@ -42,7 +42,9 @@ async function buildHtml(token) {
       const api = `https://api.github.com/users/${u.login}`;
       const data = await fetchJson(api, token);
       const avatar = data && data.avatar_url ? data.avatar_url : `https://avatars.githubusercontent.com/${u.login}`;
-      const html = `  <a href="${u.url}" target="_blank" rel="noopener noreferrer" title="${u.login}"><img src="${avatar}&s=96" width="48" height="48" style="border-radius:50%; margin:4px;" alt="${u.login}"/></a>`;
+      const html = `  <a href="${u.url}" target="_blank" rel="noopener noreferrer" title="${u.login}" style="display:inline-block; margin:4px; width:48px; height:48px; border-radius:50%; overflow:hidden;">
+    <img src="${avatar}&s=96" width="48" height="48" style="display:block; object-fit:cover; width:48px; height:48px;" alt="${u.login}"/>
+  </a>`;
       items.push(html);
     } catch (err) {
       console.error(`Failed to fetch ${u.login}: ${err.message}`);
