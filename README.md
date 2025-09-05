@@ -1,65 +1,30 @@
+
+
 # Modern Dev
 
-[![Contributors](https://img.shields.io/github/contributors/Nithwin/moderndev?style=flat-square)](https://github.com/Nithwin/moderndev/graphs/contributors)
+![Modern Dev demo](image.png)
 
-<!-- Animated colorful banner (small, safe inline SVG) and live demo badges -->
 <p align="center">
-  <svg width="100%" height="80" viewBox="0 0 1200 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Modern Dev banner">
-    <defs>
-      <linearGradient id="grad" x1="0%" x2="100%">
-        <stop offset="0%" stop-color="#ff7a7a">
-          <animate attributeName="stop-color" values="#ff7a7a;#ffb86b;#fff176;#7ee8fa;#b39ddb;#ff7a7a" dur="8s" repeatCount="indefinite" />
-        </stop>
-        <stop offset="100%" stop-color="#7ee8fa">
-          <animate attributeName="stop-color" values="#7ee8fa;#b39ddb;#fff176;#ffb86b;#ff7a7a;#7ee8fa" dur="8s" repeatCount="indefinite" />
-        </stop>
-      </linearGradient>
-    </defs>
-    <rect width="1200" height="80" rx="8" fill="#0b1220" />
-    <g>
-      <text x="24" y="44" font-family="Poppins, Arial, sans-serif" font-size="28" font-weight="700" fill="url(#grad)">Modern Dev</text>
-      <text x="24" y="64" font-family="Inter, Arial, sans-serif" font-size="12" fill="#9aa4b2">Student-run lab — build, learn, collaborate</text>
-    </g>
-  </svg>
-
+  <!-- Contributors avatars auto-generated from GitHub -->
+  <a href="https://github.com/Nithwin/moderndev/graphs/contributors" title="See all contributors">
+    <img src="https://contrib.rocks/image?repo=Nithwin/moderndev" alt="Contributors" />
+  </a>
+  <br />
   <!-- Live demo badges -->
-  <br/>
   <a href="https://moderndev.vercel.app/" title="Open live demo"><img src="https://img.shields.io/badge/Live-Demo-brightgreen?style=flat-square&logo=google-chrome" alt="Live Demo"/></a>
   <a href="https://moderndev.vercel.app/" title="Hosted on Vercel"><img src="https://img.shields.io/badge/Hosted-Vercel-000?style=flat-square&logo=vercel" alt="Vercel"/></a>
 </p>
 
-**Contributors:** See the full list in [MEMBERS.md](./MEMBERS.md). To add yourself, follow the steps in [CONTRIBUTING.md](./CONTRIBUTING.md).
+Modern Dev is a student-run engineering lab where students build web and mobile projects to learn, collaborate, and ship real software.
 
-> Modern Dev is a student-run lab where we design and build mobile and web applications together — a place to learn, collaborate, and ship projects.
+## Overview
 
-We are a group of college students working on real apps, helping each other grow, and keeping everything open-source so other students can learn and contribute.
-## Vision
+Modern Dev is an open, student-first community focused on practical learning and collaboration. We mentor one another, build small teams around projects, and maintain an accessible codebase for students to learn from and contribute to.
 
-We believe in learning by doing. Modern Dev provides a platform for students to:
-
-- **Collaborate** on real-world projects.
-- **Learn** modern development practices.
-- **Ship** impactful applications.
-- **Grow** as developers and team members.
-## Demo (Screenshot preview)
-
-This is how the app looks
-
-![Modern Dev demo](image.png)
-
-## What we build
-
-- Cross-platform mobile apps
-- Progressive web apps and responsive websites
-- Small tools, utilities, and prototypes used in coursework
-- UI components, shared libraries, and design systems
-
-## Highlights
-
-- Student-first: mentors + learners collaborating
-- Open-source: contributions welcome from college students
-- Modern stack: Next.js, React, Tailwind/PostCSS (see `package.json` and `app/`)
-
+Key points:
+- Student-focused: mentorship + hands-on experience
+- Open-source: contributions welcome from students and mentors
+- Modern stack: Next.js, React, Tailwind/PostCSS
 
 ## Quick start (developer)
 
@@ -75,119 +40,27 @@ npm install
 npm run dev
 ```
 
-Open `http://localhost:3000` in your browser. Edit `app/page.tsx` or components in `components/` and watch the site update.
+Open http://localhost:3000 in your browser. Edit `app/page.tsx` or components in `components/` and the site will hot-reload.
 
-## How to contribute (student-friendly)
+## Contributing
 
-This quick, step-by-step guide shows exactly what to run (PowerShell) from cloning to opening a PR. Follow the commands and replace placeholders (UPPERCASE words) with your values.
+We keep detailed contribution instructions in `CONTRIBUTING.md`. For most contributions follow:
 
-1) Fork the repo on GitHub
+- Fork the repo → create a branch → make your change → open a PR.
 
-- Open the repository page on GitHub and click "Fork" (top-right). This creates `github.com/YOUR_USERNAME/moderndev`.
+See: [CONTRIBUTING.md](./CONTRIBUTING.md)
 
-2) Clone your fork locally
+## Project structure
 
-```powershell
-# replace YOUR_USERNAME
-git clone https://github.com/YOUR_USERNAME/moderndev.git
-cd moderndev
-```
-
-3) Add the upstream remote (original repo)
-
-```powershell
-git remote add upstream https://github.com/Nithwin/moderndev.git
-git fetch upstream
-```
-
-4) Create a feature branch
-
-```powershell
-# choose a short name for your change
-git checkout -b feat/short-description
-```
-
-5) Install dependencies and run the site
-
-```powershell
-npm install
-npm run dev
-```
-
-Open http://localhost:3000 to test your changes.
-
-6) Make your change
-
-- Edit files in `app/` or `components/`.
-- Keep changes focused to one idea per branch.
-
-7) Stage and commit
-
-```powershell
-git add .
-git commit -m "feat: short summary of change"
-```
-
-8) Push your branch to your fork
-
-```powershell
-git push -u origin feat/short-description
-```
-
-9) Open a Pull Request on GitHub
-
-- Go to your fork on GitHub. You should see a prompt to "Compare & pull request". Click it.
-- Make sure the base repo is `Nithwin/moderndev` and the base branch is `master`.
-- In the PR body include:
-  - Short summary
-  - How to test
-  - Any screenshots or a short GIF for UI changes
-  - The PR checklist from `CONTRIBUTING.md`
-
-10) Add yourself to `MEMBERS.md` (optional)
-
-If you'd like to be listed as a contributor, add one line to `MEMBERS.md` using this format and open a small PR:
-
-```markdown
-- [Your Name](https://github.com/yourusername/)
-```
-
-Or open an issue titled `Add member: Your Name` and paste the same line; a maintainer will add you.
-
-11) Keep your fork up to date (optional but recommended)
-
-```powershell
-# fetch latest changes from upstream master
-git fetch upstream
-git checkout master
-git merge upstream/master
-# push updated master to your fork
-git push origin master
-```
-
-12) Notes and etiquette
-
-- Make small, focused PRs — they get reviewed faster.
-- Add screenshots or a short demo for UI work.
-- Do not commit secrets or large files.
-- If you're unsure what to work on, open an issue and ask for guidance (label it `help wanted`).
-
----
-
-Next: I can add a pre-filled `PULL_REQUEST_TEMPLATE.md` and `ISSUE_TEMPLATE.md` to make PRs and issues even easier — say the word and I will add them.
-
-## Project structure (quick)
-
-- `app/` — Next.js app routes and pages
-- `components/` — UI components used across pages
-- `public/` — static assets (images, video, fonts)
-- `README.md` — this file
+- `app/` — Next.js routes and pages
+- `components/` — React components used across the site
+- `public/` — static assets (images, fonts, video)
 
 ## Code of conduct
 
-Be kind and respectful. We want a welcoming, harassment-free space for students. If you need help, open an issue or reach out to project maintainers.
+Be kind and respectful. See `CODE_OF_CONDUCT.md` for details.
 
 ## License
 
-This project is open-source. See the [LICENSE](./LICENSE) file for details (MIT License).
+MIT — see [LICENSE](./LICENSE)
 

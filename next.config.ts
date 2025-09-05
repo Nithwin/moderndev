@@ -10,14 +10,16 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'i.postimg.cc',
       },
+      {
+        protocol: 'https',
+        hostname: 'avatars.githubusercontent.com',
+      },
       // You can add other hosts here if you need to
       // {
       //   protocol: 'https',
       //   hostname: 'example.com',
       // },
     ],
-    // For older versions of Next.js, you might see this syntax:
-    // domains: ['i.postimg.cc'],
   },
 };
 
