@@ -6,9 +6,12 @@
 
 <p align="center">
   <!-- Contributors avatars auto-generated from GitHub -->
-  <a href="https://github.com/Nithwin/moderndev/graphs/contributors" title="See all contributors">
-    <img src="https://contrib.rocks/image?repo=Nithwin/moderndev" alt="Contributors" />
-  </a>
+  <!-- CONTRIBUTORS:START -->
+<p align="center">
+  <a href="https://github.com/Nithwin" target="_blank" rel="noopener noreferrer" title="Nithwin"><img src="https://avatars.githubusercontent.com/u/132214352?v=4&s=96" width="48" height="48" style="border-radius:50%; margin:4px;" alt="Nithwin"/></a>
+  <a href="https://github.com/Raju251004" target="_blank" rel="noopener noreferrer" title="Raju251004"><img src="https://avatars.githubusercontent.com/u/170350301?v=4&s=96" width="48" height="48" style="border-radius:50%; margin:4px;" alt="Raju251004"/></a>
+</p>
+<!-- CONTRIBUTORS:END -->
   <br />
   <!-- Live demo badges -->
   <a href="https://moderndev.vercel.app/" title="Open live demo"><img src="https://img.shields.io/badge/Live-Demo-brightgreen?style=flat-square&logo=google-chrome" alt="Live Demo"/></a>
